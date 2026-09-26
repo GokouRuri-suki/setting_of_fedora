@@ -1,0 +1,38 @@
+add_newline = false
+format = """${custom.venv}$username$hostname$directory$git_branch$git_status$character"""
+
+[username]
+show_always = true
+style_user = "bold fg:#1a1424 bg:#ff79c6"
+style_root = "bold fg:#1a1424 bg:#ff6b9d"
+format = "[ $user@ ]($style)"
+
+[hostname]
+ssh_only = false
+style = "bold fg:#1a1424 bg:#cba6f7"
+format = "[ $hostname ]($style)"
+
+[directory]
+style = "bold fg:#1a1424 bg:#ff9ec4"
+truncation_length = 0
+truncate_to_repo = false
+format = "[ $path ]($style)"
+
+[git_branch]
+symbol = " "
+style = "bold fg:#1a1424 bg:#ff79c6"
+format = " [$symbol$branch ]($style)"
+
+[git_status]
+style = "bold fg:#1a1424 bg:#cba6f7"
+format = '([ $all_status$ahead_behind ]($style) )'
+
+[custom.venv]
+when = 'test -n "$VIRTUAL_ENV"'
+command = 'basename "$VIRTUAL_ENV"'
+style = "bold fg:#1a1424 bg:#f9e2af"
+format = '[ $output ]($style)'
+
+[character]
+success_symbol = "[❯](bold #ff79c6)"
+error_symbol = "[❯](bold #ff6b9d)"
