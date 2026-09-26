@@ -1,0 +1,1 @@
+# setting_of_fedora
